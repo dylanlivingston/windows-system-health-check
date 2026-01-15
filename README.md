@@ -1,30 +1,42 @@
 # Windows System Health Check
 
-A simple tool to collect basic system health information on Windows.
+A simple Windows tool to collect basic system health information.
 
-This repository contains:
-- A batch file you can double-click to run the tool
-- A PowerShell script that gathers system information
+This repository includes:
+- A batch file that runs by double-click
+- A PowerShell script that gathers system data
 - A text report saved locally
 
-## How to run
-1. Download the repository files
-2. Double-click:
-   run-health-check.bat
-3. A window will open and stay open
-4. A report will be saved to your Desktop
+---
 
-## What it collects
-- Windows version and build
-- System uptime
-- CPU information
-- Memory usage
-- Disk usage
-- IPv4 network addresses
+## How to run (double-click)
+1. Download the files
+2. Double-click `run-health-check.bat`
+3. A window opens and stays open
+4. A report is saved to your Desktop
 
-## Output
-The report is saved as:
+---
+
+## How to run (PowerShell)
+```powershell
+.\system-health-check.ps1
+
+If scripts are blocked, run once:
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+What it collects
+
+    Windows version and uptime
+
+    CPU and memory info
+
+    Disk usage
+
+    IPv4 network addresses
+
+Output
 
 system-health-report_<COMPUTERNAME>_<TIMESTAMP>.txt
+Saved to Desktop or Temp folder.
 
-If the Desktop path is unavailable, the report is saved to the system Temp folder.
